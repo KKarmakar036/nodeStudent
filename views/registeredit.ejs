@@ -1,0 +1,32 @@
+<%- include('common/head') %>
+    <%- include('common/header') %>
+        <form class="m-5 p-5" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;" action="/update/<%=data._id%>" method="post">
+            <div class="form-group mt-4">
+                <label for="name">Full Name</label>
+                <input type="text" name="name" id="name" class="form-control" id="exampleFormControlInput1" 
+                    placeholder="Full Name" value="<%=data.name%>">
+                    <p class="text-danger text-end" id="name_error">fvdb</p>
+            </div>
+            <div class="form-group mt-4">
+                <label for="email">Email address</label>
+                <input type="text" name="email" id="email" class="form-control" id="exampleFormControlInput1"
+                    placeholder="Email address" value="<%=data.email%>">
+                    <p class="text-danger text-end" id="email_error"></p>
+            </div>
+            <div class="form-group mt-4">
+                <label for="phone" >Phone Number</label>
+                <input type="text" name="phone" id="phone" class="form-control" id="exampleFormControlInput1"
+                    placeholder="Phone Number" value="<%=data.phone%>">
+                    <p class="text-danger text-end" id="phone_error"></p>
+            </div>
+            <!-- <div class="form-group mt-4">
+                <label for="photo">Enter Your Photo</label>
+                <input type="file" name="photo" class="form-control" id="exampleFormControlInput1" placeholder="photo">
+            </div> -->
+            <div class="form-group mt-4">
+                <input type="Submit" name="Submit" class="btn btn-outline-warning" href="" value="update"></input>
+            </div>
+
+        </form>
+
+        <%- include('common/footer') %>

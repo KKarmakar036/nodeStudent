@@ -1,0 +1,45 @@
+<%- include('common/head') %>
+<%- include('common/header') %>
+    <section class="table-responsive-sm p-5" >
+        <%if(massage.length>0){%>
+            <div class="p-3 mb-2 bg-danger-subtle text-danger-emphasis text-warning rounded-3"><th scope="col" ><%=massage%></th></div>
+        <%}%>
+     
+        <table class="table rounded-3" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">email</th>
+                    <th scope="col">phone</th>
+                    <th scope="col">photo</th>
+                    <th scope="col">edit</th>
+                    <th scope="col">delete</th>
+                </tr>
+            </thead>
+           
+            <tbody>
+                <%var n=1%>
+                <%for(let i of data){%>
+                    <tr>
+                        <th scope="row"><%=n++%></th>
+                        <td>
+                            <%=i.name%>
+                        </td>
+                        <td>
+                            <%=i.email%>
+                        </td>
+                        <td>
+                            <%=i.phone%>
+                        </td>
+                        <td>
+                            <img src="<%=i.photo%>" alt="" width="50px" height="50px">
+                        </td>
+                        <td><a href="registeredit/<%=i.id%>" type="button" class="btn btn-warning">Edit</a></td>
+                        <td><a href="delete/<%=i._id%>" type="button" class="btn btn-info">Delete</a></td>
+                    </tr>
+                    <%}%>
+            </tbody>
+        </table>
+    </section>
+    <%- include('common/footer') %>
